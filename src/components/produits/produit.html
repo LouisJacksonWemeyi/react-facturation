@@ -1,0 +1,285 @@
+<div class="app">
+
+  <div class="app--container">
+    <div class="app--header">
+      <div class="flx-row align-justify css-ptoqev">
+        <h2 class="title-bar-title css-13thv8x-heading-heading--giga-heading--no-margin erjtaf20">Produits</h2>
+      </div>
+    </div>
+    <div id="app" class="app--content-container">
+      <div>
+        <div class="contacts-filters filters-row">
+          <div class="filter-bar">
+            <div class="flx-row medium-collapse large-collapse filters-top-row">
+              <div class="columns shrink"><button class="button button--primary mrm create-new" type="submit">Nouveau
+                  produit</button><button class="button mrm" type="button">Importer</button></div>
+              <div class="columns shrink search__placeholder">
+                <div class="md-search-container"><input type="search" placeholder="Recherche produits"
+                    class="input input--search " value="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="position: relative;">
+          <div style="overflow: visible; width: 0px;">
+            <div>
+              <div class="List__header flx-row " style="width: 910px; height: 40px;">
+                <div class="List__cell column  columns col-img product-image-container-small"></div>
+                <div class="List__cell column small-1  sortable">N°</div>
+                <div class="List__cell column small-3  truncate-details sortable">Nom<span
+                    class="sort-icon sort-state-asc"></span></div>
+                <div class="List__cell column small-grow  truncate-details sortable">Description</div>
+                <div class="List__cell column small-1  text-align sortable">Prix</div>
+                <div class="List__cell column small-1  shrink col-actions"><span class="sort-icon"></span></div>
+              </div>
+              <div aria-label="grid" aria-readonly="true" class="ReactVirtualized__Grid ReactVirtualized__List"
+                role="grid" tabindex="0"
+                style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 910px; will-change: transform; overflow: hidden;">
+                <div class="ReactVirtualized__Grid__innerScrollContainer" role="rowgroup"
+                  style="width: auto; height: 50px; max-width: 910px; max-height: 50px; overflow: hidden; position: relative;">
+                  <a class="List__row flx-row "
+                    style="height: 50px; left: 0px; position: absolute; top: 0px; width: 100%;">
+                    <div class="List__cell column  columns col-img product-image-container-small">
+                      <div class="base-list">
+                        <div class="columns col-img">
+                          <div class="base-list col-img--placeholder"><img
+                              src="/api/files/5c0fcf195a77ce0020904ccc/v1?csrfToken=5c0fa2c8acb29e0020b9a60a"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="List__cell column small-1 ">2</div>
+                    <div class="List__cell column small-3  truncate-details">voiture</div>
+                    <div class="List__cell column small-grow  truncate-details">toyota corrolla annee 2010</div>
+                    <div class="List__cell column small-1  text-align">10.000,00</div>
+                    <div class="List__cell column small-1  shrink col-actions"><button class="List__actions-btn"
+                        data-ignore-router="true"></button></div>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="resize-triggers">
+            <div class="expand-trigger">
+              <div style="width: 911px; height: 91px;"></div>
+            </div>
+            <div class="contract-trigger"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="createProductModal modal modal-send in" style="left: 470px; top: 344px;">
+  <div class="modal-header mbl">
+    <h2 class="modal-title plm">Nouveau produit</h2> <button class="cellRight modal-close"><i
+        class="app-icns icn-svg-modal-close"></i></button>
+  </div>
+  <div class="content">
+    <div class="feedback bar-sml bar-error mhn mbl" style="display: none;"></div>
+    <div class="modal-body ">
+      <form class="relative" onsubmit="return false;" autocomplete="off">
+        <div class="flx-row phs mtl">
+          <div class="columns small-4">
+            <div class="inputs-row ctrlHolder name">
+              <label class="mandatory-label" for="prod-modal-name"> Nom </label>
+              <input type="text" name="name" id="prod-modal-name" class="first-focus-target textInput no-scroll"
+                data-bind="name" maxlength="250" value="" autocomplete="off">
+            </div>
+            <div class="inputs-row ctrlHolder description"> <label for="prod-modal-description"> Description </label>
+              <textarea name="description" data-bind="description" id="prod-modal-description" maxlength="1500">
+              </textarea>
+            </div>
+            <div class="ctrlHolder sku" data-original-title="">
+              <label for="sku">N° de produit</label>
+              <input maxlength="30" type="text" class="textInput" name="sku" id="sku" data-bind="sku" value="">
+            </div>
+          </div>
+          <div class="columns">
+            <div class="ctrlHolder netUnitSalesPrice" data-original-title="">
+              <label class="mandatory-label" for="netUnitSalesPrice"> Prix HT </label>
+              <input type="text" class="textInput" name="netUnitSalesPrice" id="netUnitSalesPrice"
+                data-bind="netUnitSalesPrice" value="0,00">
+            </div>
+            <div class="ctrlHolder rate selectWrapCell">
+              <label class="mandatory-label" for="rate"> TVA</label> <span class="tax-rate">
+                <div>
+                  <div class="select2-container taxRates" id="s2id_autogen1">
+                    <a href="javascript:void(0)" class="select2-choice" tabindex="-1">
+                      <span class="select2-chosen" id="select2-chosen-2">21%</span>
+                      <abbr class="select2-search-choice-close"></abbr>
+                      <span class="select2-arrow" role="presentation">
+                        <b role="presentation"></b></span></a><label for="s2id_autogen2"
+                      class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text"
+                      aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2">
+                    <div class="select2-drop select2-display-none">
+                      <div class="select2-search select2-search-hidden select2-offscreen"> <label
+                          for="s2id_autogen2_search" class="select2-offscreen"></label> <input type="text"
+                          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                          class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list"
+                          aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder=""> </div>
+                      <ul class="select2-results" role="listbox" id="select2-results-2"> </ul>
+                    </div>
+                  </div><select class="taxRates select2-offscreen" tabindex="-1" title="">
+                    <option value="0" selected="">21 %</option>
+                    <option value="1">12 %</option>
+                    <option value="2">6 %</option>
+                    <option value="3">0 %</option>
+                  </select>
+                </div>
+              </span> </div>
+            <div class="ctrlHolder grossUnitSalesPrice" data-original-title=""> <label class="mandatory-label"
+                for="grossUnitSalesPrice"> Prix TTC </label> <input type="text" class="textInput"
+                name="grossUnitSalesPrice" id="grossUnitSalesPrice" data-bind="grossUnitSalesPrice" value="0,00"> </div>
+            <div class="ctrlHolder unitId selectWrapCell"> <label for="prod-modal-unit"> Unité </label>
+              <div class="select2-container unit" id="s2id_autogen3"><a href="javascript:void(0)" class="select2-choice"
+                  tabindex="-1"> <span class="select2-chosen" id="select2-chosen-4">pièce</span><abbr
+                    class="select2-search-choice-close"></abbr> <span class="select2-arrow" role="presentation"><b
+                      role="presentation"></b></span></a><label for="s2id_autogen4"
+                  class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text"
+                  aria-haspopup="true" role="button" aria-labelledby="select2-chosen-4" id="s2id_autogen4">
+                <div class="select2-drop select2-display-none select2-with-searchbox">
+                  <div class="select2-search"> <label for="s2id_autogen4_search" class="select2-offscreen"></label>
+                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                      class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list"
+                      aria-owns="select2-results-4" id="s2id_autogen4_search" placeholder=""> </div>
+                  <ul class="select2-results" role="listbox" id="select2-results-4"> </ul>
+                </div>
+              </div><select name="unitId" class="unit select2-offscreen" tabindex="-1" title="">
+                <option class="opt-clear" value="">Aucun</option>
+                <option value="1">heure</option>
+                <option value="2">jour</option>
+                <option value="3">mois</option>
+                <option value="4" selected="">pièce</option>
+                <option value="5">boîte</option>
+                <option value="6">kg</option>
+                <option value="7">km</option>
+                <option value="8">litre</option>
+                <option value="11">mètre</option>
+                <option value="12">m²</option>
+                <option value="13">m³</option>
+                <option value="14">nuit</option>
+                <option value="16">pack</option>
+                <option value="18">tonne</option>
+                <option value="19">année</option>
+                <option value="20">minute</option>
+                <option value="22">lm</option>
+                <option value="23">mot</option>
+                <option value="31">semaine</option>
+              </select>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="upload-area__deck">
+              <div class="upload-area__preview hidden">
+                <div class="upload-area__remove"><i class="bi_interface-cross"></i></div> <img class="preview-img">
+              </div>
+              <div class="exp-attachment-preloader spinner hidden"></div>
+              <div class="upload-area__drop">
+                <div class="upload-area__drop-content">
+                  <div class="upload-area__drop-icon"><i class="bi_doc-upload"></i></div>
+                  <div class="upload-area__drop-text"> Télécharger une image </div>
+                </div>
+                <div class="upload-area__validation hidden"></div> <input type="file" id="upload-input">
+              </div>
+              <div contenteditable="" style="opacity: 0; color: transparent; text-indent: -9999em;"></div>
+            </div>
+            <div class="ctrlHolder netUnitCostPrice" data-original-title=""> <label for="netUnitCostPrice"> Prix de
+                revient </label> <input data-default-value="" maxlength="9" type="text" class="textInput"
+                name="netUnitCostPrice" id="netUnitCostPrice" data-bind="netUnitCostPrice" value="0,00"> </div>
+          </div>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn modal-close">Annuler</button> <button type="submit"
+            class="last-focus-target btn btn-primary saveBtn">Enregistrer</button> </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="app">
+
+  <div class="app--container">
+    <div class="app--header">
+      <div class="flx-row align-justify css-ptoqev">
+        <h2 class="title-bar-title css-13thv8x-heading-heading--giga-heading--no-margin erjtaf20">Produits</h2>
+      </div>
+    </div>
+    <div id="app" class="app--content-container">
+      <div>
+        <div class="contacts-filters filters-row">
+          <div class="filter-bar">
+            <div class="flx-row medium-collapse large-collapse filters-top-row">
+              <div class="columns shrink"><button class="button button--primary mrm create-new" type="submit">Nouveau
+                  produit</button><button class="button mrm" type="button">Importer</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h2>Modal Example</h2>
+  {/*
+  <!-- Button to Open the Modal --> */}
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+
+  {/*
+  <!-- The Modal --> */}
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+
+        {/*
+        <!-- Modal Header --> */}
+        <div class="modal-header d-block">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center">Modal Heading</h4>
+        </div>
+        <form>
+          {/*
+          <!-- Modal body --> */}
+          <div class="modal-body">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="uname">Username:</label>
+                  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
+                    required />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                    required />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" required /> I agree on blabla.
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this checkbox to continue.</div>
+                  </label>
+                </div>
+              </div>
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Enter password" name="pswd" />
+              </div>
+            </div>
+          </div>
+
+          {/*
+          <!-- Modal footer --> */}
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

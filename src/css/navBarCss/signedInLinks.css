@@ -1,0 +1,35 @@
+.customizable-nav__icon-place {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  margin: 0 auto 8px;
+  align-items: center;
+  align-content: center;
+  position: relative;
+}
+#brand {
+  margin: 0 auto 8px;
+  align-items: center;
+  align-content: center;
+  position: relative;
+}
+.customizable-nav__label {
+  display: block;
+  font-size: 10px;
+  font-family: 'OpenSansSemibold', Arial, sans-serif;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+.customizable-nav__label1 {
+  display: block;
+  font-size: 13px;
+  font-family: 'OpenSansSemibold', Arial, sans-serif;
+  line-height: 12px;
+  letter-spacing: 0.2px;
+}
+.imgcenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

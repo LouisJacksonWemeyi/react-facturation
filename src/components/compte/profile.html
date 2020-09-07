@@ -1,0 +1,616 @@
+<div class="app">
+  <div class="app--container">
+    <div class="app--header">
+      <div class="flx-row align-justify css-ptoqev">
+        <h2 class="title-bar-title css-13thv8x-heading-heading--giga-heading--no-margin erjtaf20">Entreprise</h2>
+      </div>
+    </div>
+    <div id="app" class="app--content-container">
+      <div class="settings company-profile">
+        <section class="content-placeholder">
+          <div class="content ptl">
+
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<form onsubmit="return false" class="truncate" autocomplete="off">
+  <div class="row company-details">
+    <div class="cell left">
+      <h3>Coordonnées de l'entreprise</h3>
+    </div>
+    <div class="cell middle wide"> <label>Structure de ton entreprise</label>
+      <div class="business-type-choise"> <input class="c-radio" type="radio" name="businessType"
+          id="businessTypeCompany" value="Company"> <label for="businessTypeCompany" class="pts">Société</label> <input
+          class="c-radio" type="radio" name="businessType" id="businessTypePrivate" value="Private" checked=""> <label
+          for="businessTypePrivate" class="pts">Entreprise individuelle</label> </div>
+      <div class="flx-row row-collapse mbl">
+        <div class="columns prxxl">
+          <div class="flx-row mbm businessPrivateOnly">
+            <div class="columns prm"> <label for="firstName">Prénom</label> <input type="text" class="textInput"
+                id="firstName" data-bind="firstName"> </div>
+            <div class="columns plm"> <label for="lastName">Nom</label> <input type="text" class="textInput"
+                id="lastName" data-bind="lastName"> </div>
+          </div>
+          <div class="industry mbm">
+            <div><label for="industry">Branche</label>
+              <div class="select2-container" id="s2id_industry"><a href="javascript:void(0)" class="select2-choice"
+                  tabindex="-1"> <span class="select2-chosen" id="select2-chosen-1">Sports</span><abbr
+                    class="select2-search-choice-close"></abbr>
+                  <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label
+                  for="s2id_autogen1" class="select2-offscreen"></label><input
+                  class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button"
+                  aria-labelledby="select2-chosen-1" id="s2id_autogen1">
+                <div class="select2-drop select2-display-none">
+                  <div class="select2-search select2-search-hidden select2-offscreen"> <label for="s2id_autogen1_search"
+                      class="select2-offscreen"></label> <input type="text" autocomplete="off" autocorrect="off"
+                      autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true"
+                      aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder="">
+                  </div>
+                  <ul class="select2-results" role="listbox" id="select2-results-1"> </ul>
+                </div>
+              </div>
+              <select id="industry" name="industry" tabindex="-1" title="" class="select2-offscreen">
+                <option class="opt-clear" value="">[Choisir un secteur]</option>
+                <option value="Accommodation">Accommodation</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Arts and Entertainment">Arts and Entertainment</option>
+                <option value="Bookkeeping">Bookkeeping</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Construction">Construction</option>
+                <option value="Consulting">Consulting</option>
+                <option value="Crafts">Crafts</option>
+                <option value="Education">Education</option>
+                <option value="Financial Services">Financial Services</option>
+                <option value="Gardening and Landscaping">Gardening and Landscaping</option>
+                <option value="Health Care">Health Care</option>
+                <option value="IT Services">IT Services</option>
+                <option value="Legal Services">Legal Services</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Publishing">Publishing</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Retail (offline and online)">Retail (offline and online)</option>
+                <option value="Retail (offline)">Retail (offline)</option>
+                <option value="Retail (online)">Retail (online)</option>
+                <option selected="" value="Sports">Sports</option>
+                <option value="Telecommunications">Telecommunications</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Travel Agency">Travel Agency</option>
+                <option value="Wholesale">Wholesale</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="columns prxxl">
+          <div class="name mbm"> <label for="name">Nom de l'entreprise<em class="mandatoryIcon weak"></em></label>
+            <input maxlength="100" type="text" class="first-focus-target textInput no-scroll" name="name"
+              data-bind="name" id="name"> </div>
+          <div class="compositeInput">
+            <div class="address"> <label for="address">Adresse <em class="mandatoryIcon weak prs"></em>
+              </label> <textarea placeholder="Saisir ton adresse complète" maxlength="200" rows="25" cols="25"
+                name="address" data-bind="address" id="address" class="autogrow" style="height: 66px;">      </textarea>
+            </div> <input type="text" disabled="disabled" class="textInput" value="Belgique">
+          </div>
+        </div>
+        <div class="columns">
+          <div class="email mbm"> <label for="email">E-mail<em class="mandatoryIcon weak"></em></label>
+            <input maxlength="128" type="text" class="textInput" name="email" data-bind="email" id="email">
+          </div>
+          <div class="telephoneNumber mbm"> <label for="telephoneNumber">Téléphone</label> <input maxlength="25"
+              type="text" class="textInput" name="telephoneNumber" data-bind="telephoneNumber" id="telephoneNumber">
+          </div>
+          <div class="webSite"> <label for="webSite">Site Internet</label> <input maxlength="50" type="text"
+              class="textInput" name="webSite" data-bind="webSite" id="webSite"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="row company-logo">
+    <div class="cell left">
+      <h3>Logo de l'entreprise</h3>
+    </div>
+    <div class="cell middle">
+      <div class="imageUploadCtrl">
+        <form class="imageUploadForm" enctype="multipart/form-data" method="post" onsubmit="return false">
+          <div class="imagePreview">
+            <div class="imageRemove"><i class="app-icns icn-svg-remove-img"></i></div><span
+              class="imageEmpty">Télécharger le logo</span><img
+              src="https://d3n0h4ojrl591n.cloudfront.net/agreements/8fd960da-5d6f-4401-80ba-e3cb21e3095d/logos/6bb7bbe4-1f8b-4485-a63a-5e60473c237e-logo_dubinfo_new.png"
+              alt="">
+          </div>
+          <div class="imageStatus"></div><input id="imageUpload" class="imageUpload textInput" type="file" name="file"
+            accept="image/jpeg, image/gif, image/png">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="row tax-registration">
+    <div class="cell left">
+      <h3>Numéro d'identification et de TVA</h3>
+    </div>
+    <div class="cell middle">
+      <div class="row mbm">
+        <div class="cell s2of3 pts"> Appliquer la TVA sur les factures et devis </div>
+        <div class="cellRight">
+          <div class="tgl-tax-enabled tgl-btns-group red-off tgl-on"> <button type="button"
+              class="btn tgl-btn tgl-btn-on">ACTIVÉ</button><button type="button"
+              class="btn tgl-btn tgl-btn-off">DÉSACTIVÉ</button> </div>
+        </div>
+      </div>
+      <div class="row mbxll accounting-settings hidden">
+        <div class="cell s2of3 pts"> Baser les rapports sur les dates de paiement </div>
+        <div class="cellRight">
+          <div class="tgl-report-based-on-payments tgl-btns-group red-off tgl-off"> <button type="button"
+              class="btn tgl-btn tgl-btn-on"> <i
+                class="app-icns icn-svg-lock-green mrs hidden"></i>ACTIVÉ</button><button type="button"
+              class="btn tgl-btn tgl-btn-off"> <i class="app-icns icn-svg-lock-red mrs hidden"></i>DÉSACTIVÉ</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell s1of2 prm">
+          <div class="ctrlHolder companyNumber"> <label for="companyNumber">SIREN/SIRET</label> <input maxlength="20"
+              type="text" class="textInput" name="companyNumber" data-bind="companyNumber" id="companyNumber"> </div>
+        </div>
+        <div class="cell s1of2 plm">
+          <div class="ctrlHolder vatNumber"> <label for="vatNumber">N° TVA</label> <input maxlength="20" type="text"
+              class="textInput" name="vatNumber" data-bind="vatNumber" id="vatNumber"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row alignRight cash-accounting-lock-lbl hidden"> Les paramètres du rapport sont verrouillés
+    lorsque tu as des périodes de TVA déclarées. <i class="app-icns icn-svg-lock-black mrs"></i> </div>
+  <div class="separator"></div>
+  <div class="row bank-payment">
+    <div class="cell left">
+      <h3>Coordonnées de la banque et références bancaires</h3>
+    </div>
+    <div class="cell middle">
+      <div class="ctrlHolder bankName"> <label for="bankName">Banque</label> <input maxlength="90" type="text"
+          class="textInput" name="bankName" data-bind="bankName" id="bankName"> </div>
+      <div class="ctrlHolder accountHolderName"> <label for="accountHolderName">Titulaire du compte</label>
+        <input maxlength="50" type="text" class="textInput" name="accountHolderName" data-bind="accountHolderName"
+          id="accountHolderName"> </div>
+      <div class="row">
+        <div class="cell s1of2 prm">
+          <div class="ctrlHolder bankNumber"> <label for="bankNumber">Code banque</label> <input maxlength="50"
+              type="text" class="textInput" name="bankNumber" data-bind="bankNumber" id="bankNumber"> </div>
+        </div>
+        <div class="cell s1of2 plm">
+          <div class="ctrlHolder bankAccount"> <label for="bankAccount">N° du compte</label> <input maxlength="50"
+              type="text" class="textInput" name="bankAccount" data-bind="bankAccount" id="bankAccount"> </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell s1of2 prm">
+          <div class="ctrlHolder swiftCode"> <label for="swiftCode">Code BIC</label> <input maxlength="20" type="text"
+              class="textInput" name="swiftCode" data-bind="swiftCode" id="swiftCode"> </div>
+        </div>
+        <div class="cell s1of2 plm">
+          <div class="ctrlHolder ibanCode"> <label for="ibanCode">N° IBAN</label> <input maxlength="50" type="text"
+              class="textInput" name="ibanCode" data-bind="ibanCode" id="ibanCode"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<form onsubmit="return false" class="truncate" autocomplete="off">
+  <div class="row company-details">
+    <div class="cell left">
+      <h3>Coordonnées de l'entreprise</h3>
+    </div>
+    <div class="cell middle wide">
+      <label>Structure de ton entreprise</label>
+      <div class="business-type-choise">
+        <input class="c-radio" type="radio" name="businessType" id="businessTypeCompany" value="Company" />
+        <label for="businessTypeCompany" class="pts">Société</label>
+        <input class="c-radio" type="radio" name="businessType" id="businessTypePrivate" value="Private" checked="" />
+        <label for="businessTypePrivate" class="pts">Entreprise individuelle</label>
+      </div>
+      <div class="flx-row row-collapse mbl">
+        <div class="columns prxxl">
+          <div class="flx-row mbm businessPrivateOnly">
+            <div class="columns prm">
+              <label for="firstName">Prénom</label>
+              <input type="text" class="textInput" id="firstName" data-bind="firstName" />
+            </div>
+            <div class="columns plm">
+              <label for="lastName">Nom</label>
+              <input type="text" class="textInput" id="lastName" data-bind="lastName" />
+            </div>
+          </div>
+          <div class="industry mbm">
+            <div>
+              <label for="industry">Branche</label>
+              <div class="select2-container" id="s2id_industry"><a href="javascript:void(0)" class="select2-choice"
+                  tabindex="-1"> <span class="select2-chosen" id="select2-chosen-1">Sports</span><abbr
+                    class="select2-search-choice-close"></abbr>
+                  <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label
+                  for="s2id_autogen1" class="select2-offscreen"></label><input
+                  class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button"
+                  aria-labelledby="select2-chosen-1" id="s2id_autogen1" />
+                <div class="select2-drop select2-display-none">
+                  <div class="select2-search select2-search-hidden select2-offscreen"> <label for="s2id_autogen1_search"
+                      class="select2-offscreen"></label> <input type="text" autocomplete="off" autocorrect="off"
+                      autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true"
+                      aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder="" />
+                  </div>
+                  <ul class="select2-results" role="listbox" id="select2-results-1"> </ul>
+                </div>
+              </div><select id="industry" name="industry" tabindex="-1" title="" class="select2-offscreen">
+                <option class="opt-clear" value="">[Choisir un secteur]</option>
+                <option value="Accommodation">Accommodation</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Arts and Entertainment">Arts and Entertainment</option>
+                <option value="Bookkeeping">Bookkeeping</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Construction">Construction</option>
+                <option value="Consulting">Consulting</option>
+                <option value="Crafts">Crafts</option>
+                <option value="Education">Education</option>
+                <option value="Financial Services">Financial Services</option>
+                <option value="Gardening and Landscaping">Gardening and Landscaping</option>
+                <option value="Health Care">Health Care</option>
+                <option value="IT Services">IT Services</option>
+                <option value="Legal Services">Legal Services</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Publishing">Publishing</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Retail (offline and online)">Retail (offline and online)</option>
+                <option value="Retail (offline)">Retail (offline)</option>
+                <option value="Retail (online)">Retail (online)</option>
+                <option selected="" value="Sports">Sports</option>
+                <option value="Telecommunications">Telecommunications</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Travel Agency">Travel Agency</option>
+                <option value="Wholesale">Wholesale</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="columns prxxl">
+          <div class="name mbm">
+            <label for="name">Nom de l'entreprise<em class="mandatoryIcon weak"></em></label>
+            <input maxlength="100" type="text" class="first-focus-target textInput no-scroll" name="name"
+              data-bind="name" id="name" />
+          </div>
+          <div class="compositeInput">
+            <div class="address">
+              <label for="address">Adresse <em class="mandatoryIcon weak prs"></em></label>
+              <textarea placeholder="Saisir ton adresse complète" maxlength="200" rows="25" cols="25" name="address"
+                data-bind="address" id="address" class="autogrow" style="height: 66px;">
+              </textarea>
+            </div>
+            <input type="text" disabled="disabled" class="textInput" value="Belgique" />
+          </div>
+        </div>
+        <div class="columns">
+          <div class="email mbm">
+            <label for="email">E-mail<em class="mandatoryIcon weak"></em></label>
+            <input maxlength="128" type="text" class="textInput" name="email" data-bind="email" id="email" />
+          </div>
+          <div class="telephoneNumber mbm">
+            <label for="telephoneNumber">Téléphone</label>
+            <input maxlength="25" type="text" class="textInput" name="telephoneNumber" data-bind="telephoneNumber"
+              id="telephoneNumber" />
+          </div>
+          <div class="webSite">
+            <label for="webSite">Site Internet</label>
+            <input maxlength="50" type="text" class="textInput" name="webSite" data-bind="webSite" id="webSite" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div className="row company-details">
+  <div className="col">
+    <h3>Coordonnées de l'entreprise</h3>
+  </div>
+  <div className="col">
+    <label>Structure de ton entreprise</label>
+    <div className="business-type-choise">
+      <div className="custom-control custom-radio custom-control-inline">
+        <input className="custom-control-input" type="radio" name="businessType" id="businessTypeCompany"
+          value="Company" />
+        <label for="businessTypeCompany" className="custom-control-label">Société</label>
+      </div>
+      <div className="custom-control custom-radio custom-control-inline">
+        <input className="custom-control-input" type="radio" name="businessType" id="businessTypePrivate"
+          value="Private" checked="" />
+        <label for="businessTypePrivate" className="custom-control-label">Entreprise individuelle</label>
+      </div>
+    </div>
+    <div className="row flx-row row-collapse mbl">
+      <div className="col columns prxxl">
+        <div className="row flx-row mbm businessPrivateOnly">
+          <div className="col form-group columns prm">
+            <label for="firstName">Prénom</label>
+            <input type="text" className="form-control textInput" id="firstName" data-bind="firstName" />
+          </div>
+          <div className="col form-group columns plm">
+            <label for="lastName">Nom</label>
+            <input type="text" className="form-control textInput" id="lastName" data-bind="lastName" />
+          </div>
+        </div>
+        <div class="industry mbm">
+          <div>
+            <label for="industry">Branche</label>
+            <div class="select2-container" id="s2id_industry"><a href="javascript:void(0)" class="select2-choice"
+                tabindex="-1"> <span class="select2-chosen" id="select2-chosen-1">Sports</span><abbr
+                  class="select2-search-choice-close"></abbr>
+                <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label
+                for="s2id_autogen1" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen"
+                type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1" />
+              <div class="select2-drop select2-display-none">
+                <div class="select2-search select2-search-hidden select2-offscreen"> <label for="s2id_autogen1_search"
+                    class="select2-offscreen"></label> <input type="text" autocomplete="off" autocorrect="off"
+                    autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true"
+                    aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder="" />
+                </div>
+                <ul class="select2-results" role="listbox" id="select2-results-1"> </ul>
+              </div>
+            </div><select id="industry" name="industry" tabindex="-1" title="" class="select2-offscreen">
+              <option class="opt-clear" value="">[Choisir un secteur]</option>
+              <option value="Accommodation">Agriculture</option>
+              <option value="Accounting">Artisan</option>
+              <option value="Advertising">Automobile, mécanique</option>
+              <option value="Agriculture">Banques, assurance</option>
+              <option value="Arts and Entertainment">Commerce de proximité</option>
+              <option value="Bookkeeping">Construction, BTP</option>
+              <option value="Cleaning">Chimie, pharmacie</option>
+              <option value="Construction">Culture, art, design, audiovisuel</option>
+              <option value="Consulting">Communication, web, e-commerce, publicité</option>
+              <option value="Crafts">Cabinet d’Expertise comptable - Expert-Comptable</option>
+              <option value="Education">Conseil juridique</option>
+              <option value="Financial Services">Consulting, coaching, audit, autres conseils aux entreprises</option>
+              <option value="Gardening and Landscaping">Distribution, autre commerce</option>
+              <option value="Health Care">Édition, journalisme, traduction</option>
+              <option value="IT Services">Environnement, énergie</option>
+              <option value="Legal Services">Hôtellerie, restauration</option>
+              <option value="Manufacturing">Industrie (alimentaire, bois, sidérurgie...)</option>
+              <option value="Mechanical Engineering">Informatique-telecom</option>
+              <option value="Publishing">Logistique, transport, maintenance</option>
+              <option value="Real Estate">Mode, industrie textile</option>
+              <option value="Restaurant">Santé</option>
+              <option value="Retail (offline and online)">Services aux particuliers</option>
+              <option value="Retail (offline)">Service public, fonction publique</option>
+              <option value="Retail (online)">Tourisme, sport, loisirs</option>
+              <option selected="" value="Sports">Autre secteur</option>
+              <option value="Telecommunications">Telecommunications</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Travel Agency">Travel Agency</option>
+              <option value="Wholesale">Wholesale</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div className="col columns prxxl">
+        <div className="form-group name mbm">
+          <label for="name">Nom de l'entreprise<em class="mandatoryIcon weak"></em></label>
+          <input maxlength="100" type="text" className="form-control first-focus-target textInput no-scroll" name="name"
+            data-bind="name" id="name" />
+        </div>
+        <div className="compositeInput">
+          <div className="form-group address">
+            <label for="address">Adresse <em className="mandatoryIcon weak prs"></em></label>
+            <textarea placeholder="Saisir ton adresse complète" maxlength="200" rows="25" cols="25" name="address"
+              data-bind="address" id="address" className="form-control autogrow" style="height: 66px;">
+            </textarea>
+          </div>
+          <input type="text" disabled="disabled" className="form-control textInput" value="Belgique" />
+        </div>
+      </div>
+      <div className="col columns">
+        <div className="email mbm">
+          <label for="form-group email">E-mail<em class="mandatoryIcon weak"></em></label>
+          <input maxlength="128" type="text" className="form-control textInput" name="email" data-bind="email"
+            id="email" />
+        </div>
+        <div className="form-group telephoneNumber mbm">
+          <label for="telephoneNumber">Téléphone</label>
+          <input maxlength="25" type="text" className="form-control textInput" name="telephoneNumber"
+            data-bind="telephoneNumber" id="telephoneNumber" />
+        </div>
+        <div className="form-group webSite">
+          <label for="webSite">Site Internet</label>
+          <input maxlength="50" type="text" className="form-control textInput" name="webSite" data-bind="webSite"
+            id="webSite" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  </li>
+  <li id="9" class="options__item" style="display: none;">
+
+  </li>
+  <li id="10" class="options__item" style="display: none;">
+    Conseil juridique
+  </li>
+  <li id="11" class="options__item" style="display: none;">
+    Consulting, coaching, audit, autres conseils aux entreprises
+  </li>
+  <li id="12" class="options__item" style="display: none;">
+    Distribution, autre commerce
+  </li>
+  <li id="13" class="options__item" style="display: none;">
+    Édition, journalisme, traduction
+  </li>
+  <li id="14" class="options__item" style="display: none;">
+    Environnement, énergie
+  </li>
+  <li id="15" class="options__item" style="display: none;">
+    Hôtellerie, restauration
+  </li>
+  <li id="16" class="options__item" style="display: none;">
+    Industrie (alimentaire, bois, sidérurgie...)
+  </li>
+  <li id="17" class="options__item" style="display: none;">
+    Informatique-telecom
+  </li>
+  <li id="18" class="options__item" style="display: none;">
+    Logistique, transport, maintenance
+  </li>
+  <li id="19" class="options__item" style="display: none;">
+    Mode, industrie textile
+  </li>
+  <li id="20" class="options__item" style="display: none;">
+    Santé
+  </li>
+  <li id="21" class="options__item" style="display: none;">
+    Services aux particuliers
+  </li>
+  <li id="22" class="options__item" style="display: none;">
+    Service public, fonction publique
+  </li>
+  <li id="23" class="options__item" style="display: none;">
+    Tourisme, sport, loisirs
+  </li>
+  <li id="24" class="options__item" style="display: none;">
+    Autre secteur
+  </li>
+  </ul>
+</div>
+
+
+<div class="row company-logo">
+  <div class="cell left">
+    <h3>Logo de l'entreprise</h3>
+  </div>
+  <div class="cell middle">
+    <div class="imageUploadCtrl">
+      <form class="imageUploadForm" enctype="multipart/form-data" method="post" onsubmit="return false"
+        action="undefined" encoding="multipart/form-data">
+        <div class="imagePreview empty">
+          <div class="imageRemove hidden"><i class="app-icns icn-svg-remove-img"></i></div><span
+            class="imageEmpty">Télécharger le logo</span><img src="/gfx/spinner.gif" alt="" class="hidden">
+        </div>
+        <div class="imageStatus"></div><input id="imageUpload" class="imageUpload textInput" type="file" name="file"
+          accept="image/jpeg, image/gif, image/png">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row tax-registration">
+  <div class="col cell left">
+    <h3>Numéro d'identification et de TVA</h3>
+  </div>
+  <div class="col cell middle">
+    <div class="row">
+      <div class="cell s1of2 prm">
+        <div class="ctrlHolder companyNumber"> <label for="companyNumber">SIREN/SIRET</label> <input maxlength="20"
+            type="text" class="textInput" name="companyNumber" data-bind="companyNumber" id="companyNumber"> </div>
+      </div>
+      <div class="cell s1of2 plm">
+        <div class="ctrlHolder vatNumber"> <label for="vatNumber">N° TVA</label> <input maxlength="20" type="text"
+            class="textInput" name="vatNumber" data-bind="vatNumber" id="vatNumber"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row bank-payment">
+  <div class="col cell left">
+    <h3>Coordonnées de la banque et références bancaires</h3>
+  </div>
+  <div class="col cell middle">
+    <div class="form-group ctrlHolder bankName">
+      <label for="bankName">Banque</label>
+      <input maxlength="90" type="text" class=" form-control textInput" name="bankName" data-bind="bankName"
+        id="bankName" />
+    </div>
+    <div class="form-group ctrlHolder accountHolderName">
+      <label for="accountHolderName">Titulaire du compte</label>
+      <input maxlength="50" type="text" class="form-control textInput" name="accountHolderName"
+        data-bind="accountHolderName" id="accountHolderName" />
+    </div>
+    <div class="row">
+      <div class="col cell s1of2 prm">
+        <div class="form-group ctrlHolder bankNumber">
+          <label for="bankNumber">Code banque</label>
+          <input maxlength="50" type="text" class="form-control textInput" name="bankNumber" data-bind="bankNumber"
+            id="bankNumber" />
+        </div>
+      </div>
+      <div class="col cell s1of2 plm">
+        <div class="ctrlHolder bankAccount">
+          <label for="bankAccount">N° du compte</label>
+          <input maxlength="50" type="text" class="form-control textInput" name="bankAccount" data-bind="bankAccount"
+            id="bankAccount" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col cell s1of2 prm">
+        <div class="form-group ctrlHolder swiftCode">
+          <label for="swiftCode">Code BIC</label>
+          <input maxlength="20" type="text" class="form-control textInput" name="swiftCode" data-bind="swiftCode"
+            id="swiftCode" />
+        </div>
+      </div>
+      <div class="col cell s1of2 plm">
+        <div class="form-group ctrlHolder ibanCode">
+          <label for="ibanCode">N° IBAN</label>
+          <input maxlength="50" type="text" class="textInput" name="ibanCode" data-bind="ibanCode" id="ibanCode" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ref={ref => (this.fileInput = ref)}
+then(() => {
+  this.fileInput.value = '';
+})
+branche
+adresseEntreprise
+nomEntreprise
+emailEntreprise
+telephoneNumberEnt
+webSite
+companyNumber
+vatNumber
+bankName
+accountHolderName
+bankNumber
+bankAccount
+swiftCode
+ibanCode
+
+if (userAuth) {
+  if (userAuth.CompanyData) {
+    return (
+      <React.Fragment>
+        <CompanyProfil companyProfile={userAuth.companyData} />
+      </React.Fragment>
+    );
+  } else {
+    return (
+      <React.Fragment>
+        <NouveauCompProfil companyProfile={companyProfile} />
+      </React.Fragment>
+    );
+  }
+} else {
+  return <Spinner />;
+}
