@@ -1,0 +1,431 @@
+<% if (facture.lignesFacture.length > 0 ){ %> <% const lignesFactureTva0Prcent =
+facture.lignesFacture.filter( ligneFacture=> ligneFacture.tva == 0 );%> <% const
+lignesFactureTva6Prcent = facture.lignesFacture.filter( ligneFacture =>
+ligneFacture.tva == 6 );%> <% const lignesFactureTva12Prcent =
+facture.lignesFacture.filter( ligneFacture => ligneFacture.tva == 12 );%> <%
+const lignesFactureTva21Prcent = facture.lignesFacture.filter( ligneFacture =>
+ligneFacture.tva == 21 );%> <%if(lignesFactureTva0Prcent.length>0){ %>
+<tr>
+  <td>
+    TVA &nbsp; 0 &nbsp; %
+    <i>de</i>
+    &nbsp;<%= lignesFactureTva0Prcent .map( ligneFacture =>
+    ligneFacture.quantite * ligneFacture.prix * (1 - ligneFacture.reduction /
+    100) ) .reduce(function(a, b) { return a + b; }) %>
+  </td>
+  <td class="table-number">
+    <%= lignesFactureTva0Prcent .map( ligneFacture => (ligneFacture.quantite *
+    ligneFacture.prix * (100 - ligneFacture.reduction) * ligneFacture.tva) /
+    10000 ).reduce(function(a, b) {return a + b;}) %>
+  </td>
+</tr>
+<% } %> <%if(lignesFactureTva6Prcent.length>0){ %>
+<tr>
+  <td>
+    TVA &nbsp; 0 &nbsp; %
+    <i>de</i>
+    &nbsp;<%= lignesFactureTva6Prcent .map( ligneFacture =>
+    ligneFacture.quantite * ligneFacture.prix * (1 - ligneFacture.reduction /
+    100) ) .reduce(function(a, b) { return a + b; }) %>
+  </td>
+  <td class="table-number">
+    <%= lignesFactureTva6Prcent .map( ligneFacture => (ligneFacture.quantite *
+    ligneFacture.prix * (100 - ligneFacture.reduction) * ligneFacture.tva) /
+    10000 ).reduce(function(a, b) {return a + b;}) %>
+  </td>
+</tr>
+<% } %> <%if(lignesFactureTva12Prcent.length>0){ %>
+<tr>
+  <td>
+    TVA &nbsp; 0 &nbsp; %
+    <i>de</i>
+    &nbsp;<%= lignesFactureTva12Prcent .map( ligneFacture =>
+    ligneFacture.quantite * ligneFacture.prix * (1 - ligneFacture.reduction /
+    100) ) .reduce(function(a, b) { return a + b; }) %>
+  </td>
+  <td class="table-number">
+    <%= lignesFactureTva12Prcent .map( ligneFacture => (ligneFacture.quantite *
+    ligneFacture.prix * (100 - ligneFacture.reduction) * ligneFacture.tva) /
+    10000 ).reduce(function(a, b) {return a + b;}) %>
+  </td>
+</tr>
+<% } %> <%if(lignesFactureTva21Prcent.length>0){ %>
+<tr>
+  <td>
+    TVA &nbsp; 0 &nbsp; %
+    <i>de</i>
+    &nbsp;<%= lignesFactureTva21Prcent .map( ligneFacture =>
+    ligneFacture.quantite * ligneFacture.prix * (1 - ligneFacture.reduction /
+    100) ) .reduce(function(a, b) { return a + b; }) %>
+  </td>
+  <td class="table-number">
+    <%= lignesFactureTva21Prcent .map( ligneFacture => (ligneFacture.quantite *
+    ligneFacture.prix * (100 - ligneFacture.reduction) * ligneFacture.tva) /
+    10000 ).reduce(function(a, b) {return a + b;}) %>
+  </td>
+</tr>
+<% } %> <% } %>
+
+<div class="clearfix">
+  <div class="invoice-table">
+    <table class="invoice-total-table" style="width: 53%;float: left;">
+      <tbody class="base-text">
+        <tr class="table-head show" style="text-align: center;">
+          <td class="" style="background-color: #DADEE3;">
+            Taux TVA
+          </td>
+          <td class="" style="background-color: #DADEE3;">
+            Montant HT
+          </td>
+          <td class="" style="background-color: #DADEE3;">
+            Valeur TVA
+          </td>
+        </tr>
+        <% if (facture.lignesFacture.length > 0 ){ %> <% var
+        lignesFactureTva0Prcent = facture.lignesFacture.filter( ligneFacture=>
+        ligneFacture.tva == 0 ); var lignesFactureTva6Prcent =
+        facture.lignesFacture.filter( ligneFacture => ligneFacture.tva == 6 );
+        var lignesFactureTva12Prcent = facture.lignesFacture.filter(
+        ligneFacture => ligneFacture.tva == 12 ); var lignesFactureTva21Prcent =
+        facture.lignesFacture.filter( ligneFacture => ligneFacture.tva == 21
+        );%> <%if(lignesFactureTva0Prcent.length>0){ %> <% var zero =
+        lignesFactureTva0Prcent .map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; }).toFixed(2); %>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241); text-align: right; padding-right: 15px;"
+          >
+            0 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=zero%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= lignesFactureTva0Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}).toFixed(2) %> €
+          </td>
+        </tr>
+        <% } %> <%if(lignesFactureTva6Prcent.length>0){ %> <% var six
+        =lignesFactureTva6Prcent.map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; }).toFixed(2);%>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            6 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=six%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= lignesFactureTva6Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}).toFixed(2) %> €
+          </td>
+        </tr>
+        <% } %> <%if(lignesFactureTva12Prcent.length>0){ %> <% var douze =
+        lignesFactureTva12Prcent .map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; }).toFixed(2);%>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241); text-align: right; padding-right: 15px;"
+          >
+            12 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=douze%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            1 <%= lignesFactureTva12Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}).toFixed(2)%> €
+          </td>
+        </tr>
+        <% } %> <%if(lignesFactureTva21Prcent.length>0){ %> <% var vingtUn =
+        lignesFactureTva21Prcent .map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; }).toFixed(2);%>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            21 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=vingtUn%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= lignesFactureTva21Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}).toFixed(2) %> €
+          </td>
+        </tr>
+        <% } %> <% } %>
+        <tr>
+          <td style="border-left: 1px solid rgb(236, 239, 241);"></td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            TVA
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= facture.lignesFacture.map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}).toFixed(2) %> €
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invoice-table">
+    <table
+      class="invoice-total-table"
+      style="background-color: #DADEE3; width: 40%;"
+    >
+      <tbody class="base-text">
+        <tr>
+          <td>Total HT</td>
+          <td class="table-number">
+            <%=
+            facture.lignesFacture.map(ligneFacture=>((ligneFacture.quantite*ligneFacture.prix)*((100-ligneFacture.reduction)/100))).reduce(function(a,
+            b){return a+b;}).toFixed(2)%> €
+          </td>
+        </tr>
+        <tr>
+          <td>TVA</td>
+          <td class="table-number">
+            <%= facture.lignesFacture.map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}).toFixed(2) %> €
+          </td>
+        </tr>
+        <tr class="invoice-total-table__amount">
+          <td>Montant Total EUR</td>
+          <td class="table-number">
+            <%= facture.lignesFacture .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * ((100 -
+            ligneFacture.reduction) * ligneFacture.tva + 100 * (100 -
+            ligneFacture.reduction))) / 10000 ) .reduce(function(a, b) { return
+            a + b; }).toFixed(2) %> €
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div>
+  <div class="invoice-table">
+    <table class="invoice-total-table" style="width: 50%;float: left;">
+      <tbody class="base-text">
+        <tr class="table-head show" style="text-align: center;">
+          <td class="" style="background-color: #DADEE3;">
+            Taux TVA
+          </td>
+          <td class="" style="background-color: #DADEE3;">
+            Montant HT
+          </td>
+          <td class="" style="background-color: #DADEE3;">
+            Valeur TVA
+          </td>
+        </tr>
+        <% if (facture.lignesFacture.length > 0 ){ %> <% var
+        lignesFactureTva0Prcent = facture.lignesFacture.filter( ligneFacture=>
+        ligneFacture.tva == 0 ); var lignesFactureTva6Prcent =
+        facture.lignesFacture.filter( ligneFacture => ligneFacture.tva == 6 );
+        var lignesFactureTva12Prcent = facture.lignesFacture.filter(
+        ligneFacture => ligneFacture.tva == 12 ); var lignesFactureTva21Prcent =
+        facture.lignesFacture.filter( ligneFacture => ligneFacture.tva == 21
+        );%> <%if(lignesFactureTva0Prcent.length>0){ %> <% var zero =
+        lignesFactureTva0Prcent .map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; }); %>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241); text-align: right; padding-right: 15px;"
+          >
+            0 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=zero%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= lignesFactureTva0Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}) %> €
+          </td>
+        </tr>
+        <% } %> <%if(lignesFactureTva6Prcent.length>0){ %> <% var six
+        =lignesFactureTva6Prcent.map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; });%>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            6 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=six%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= lignesFactureTva6Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}) %> €
+          </td>
+        </tr>
+        <% } %> <%if(lignesFactureTva12Prcent.length>0){ %> <% var douze =
+        lignesFactureTva12Prcent .map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; });%>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241); text-align: right; padding-right: 15px;"
+          >
+            12 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=douze%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            1 <%= lignesFactureTva12Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;})%> €
+          </td>
+        </tr>
+        <% } %> <%if(lignesFactureTva21Prcent.length>0){ %> <% var vingtUn =
+        lignesFactureTva21Prcent .map( ligneFacture => ligneFacture.quantite *
+        ligneFacture.prix * (1 - ligneFacture.reduction / 100) )
+        .reduce(function(a, b) { return a + b; });%>
+        <tr>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            21 %
+          </td>
+          <td
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%=vingtUn%> €
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= lignesFactureTva21Prcent .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}) %> €
+          </td>
+        </tr>
+        <% } %> <% } %>
+        <tr>
+          <td style="border-left: 1px solid rgb(236, 239, 241);"></td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            TVA
+          </td>
+          <td
+            class=""
+            style="border-right: 1px solid rgb(236, 239, 241); border-left: 1px solid rgb(236, 239, 241);text-align: right; padding-right: 15px;"
+          >
+            <%= facture.lignesFacture.map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}) %> €
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invoice-table">
+    <table
+      class="invoice-total-table"
+      style="background-color: #DADEE3; width: 40%;"
+    >
+      <tbody class="base-text">
+        <tr>
+          <td>Total HT</td>
+          <td class="table-number">
+            <%=
+            facture.lignesFacture.map(ligneFacture=>((ligneFacture.quantite*ligneFacture.prix)*((100-ligneFacture.reduction)/100))).reduce(function(a,
+            b){return a+b;})%> €
+          </td>
+        </tr>
+        <tr>
+          <td>TVA</td>
+          <td class="table-number">
+            <%= facture.lignesFacture.map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * (100 -
+            ligneFacture.reduction) * ligneFacture.tva) / 10000
+            ).reduce(function(a, b) {return a + b;}) %> €
+          </td>
+        </tr>
+        <tr class="invoice-total-table__amount">
+          <td>Montant Total EUR</td>
+          <td class="table-number">
+            <%= facture.lignesFacture .map( ligneFacture =>
+            (ligneFacture.quantite * ligneFacture.prix * ((100 -
+            ligneFacture.reduction) * ligneFacture.tva + 100 * (100 -
+            ligneFacture.reduction))) / 10000 ) .reduce(function(a, b) { return
+            a + b; }) %> €
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

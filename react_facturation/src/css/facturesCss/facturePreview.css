@@ -1,0 +1,80 @@
+.table-text {
+  text-align: left;
+}
+.table-number {
+  text-align: right;
+}
+td + td.td-description {
+  padding-left: 0;
+}
+.invoice-table__description {
+  color: #646473;
+  white-space: pre-wrap;
+  font-size: 10px;
+  line-height: 20px;
+}
+/* th.header-text {
+  padding: 6px 0 8px;
+} */
+/* .print .header-text {
+  border-top: none !important;
+  border-top-width: initial !important;
+  border-top-style: none !important;
+  border-top-color: initial !important;
+} */
+/* .header-text,
+.signature__label,
+h3.header-text,
+th.header-text {
+  background: white;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+   background-repeat-x: initial;
+  background-repeat-y: initial; 
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: white;
+   font-size: 13px; 
+  font-style: italic;
+  padding: 0 0 13px 0;
+} */
+/* .invoice-table th + th {
+  padding-left: 10px;
+} */
+td.td-product-number,
+td.td-quantity,
+td.td-unit,
+td.td-price,
+td.td-line-discount,
+td.td-line-total,
+td.td-vat {
+  width: 20px;
+}
+.header-text,
+.header-block__company-name,
+.invoice-total-table__amount {
+  color: #000000;
+}
+.header-block__company-name {
+  width: 50%;
+  float: left;
+  margin: 24px 0;
+  margin-top: 24px;
+  margin-right: 0px;
+  margin-bottom: 24px;
+  margin-left: 0px;
+  font-weight: normal;
+}
+.header-block__logo {
+  float: right;
+  width: inherit;
+  max-width: 280px;
+  height: 80px;
+}
+.document-attachment-view:hover {
+  border-color: #38f;
+  text-decoration: none;
+}

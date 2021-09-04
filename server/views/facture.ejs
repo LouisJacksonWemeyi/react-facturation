@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      /*  body {
+        border: 1px solid powderblue;
+        margin: 350px;
+        padding: 30px;
+      } */
+      .invoice-box {
+        max-width: 1000px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica';
+        color: #555;
+      }
+      .table-text {
+        text-align: left;
+      }
+      .table-number {
+        text-align: right;
+      }
+      td + td.td-description {
+        padding-left: 0;
+      }
+      .invoice-table__description {
+        color: #646473;
+        white-space: pre-wrap;
+        font-size: 10px;
+        line-height: 20px;
+      }
+      td.td-product-number,
+      td.td-quantity,
+      td.td-unit,
+      td.td-price,
+      td.td-line-discount,
+      td.td-line-total,
+      td.td-vat {
+        width: 20px;
+      }
+      .header-text,
+      .header-block__company-name,
+      .invoice-total-table__amount {
+        color: #000000;
+      }
+      .header-block__company-name {
+        width: 50%;
+        float: left;
+        margin: 24px 0;
+        margin-top: 24px;
+        margin-right: 0px;
+        margin-bottom: 24px;
+        margin-left: 0px;
+        font-weight: normal;
+      }
+      .header-block__logo {
+        float: right;
+        width: inherit;
+        max-width: 280px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-box" id="page">
+      <div class="row">
+        <div class="col-8">
+          <h2 class="header-block__company-name">Your company name</h2>
+        </div>
+        <div class="col-4 float-right">
+          <img
+            class="header-block__logo"
+            src="https://d3n0h4ojrl591n.cloudfront.net/agreements/8fd960da-5d6f-4401-80ba-e3cb21e3095d/logos/6bb7bbe4-1f8b-4485-a63a-5e60473c237e-logo_dubinfo_new.png"
+            alt="Your compagny logo"
+          />
+        </div>
+      </div>
+      <div class="page-break page-break-visited">
+        <br />
+        <br />
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <div><%= facture.client.nomClient %></div>
+          <div><%= facture.client.adressClient %></div>
+          <div><%= facture.client.emailClient %></div>
+          <div><%= facture.client.telephonClient %></div>
+        </div>
+        </div>
+        <div class="col-4 ">
+          <div class="invoice-info">
+            <h4 class="header-text">
+              <i>Facture #<%= facture.numFacture %></i>
+            </h4>
+            <div class="invoice-info__lines">
+              <div>
+                <hr
+                  style="
+                      display: block;
+                      height: 1px;
+                      border: 0;
+                      border-Top: 1px solid #ccc;
+                      margin: 1em 0;
+                      padding: 0;"
+                />
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label>
+                    <span>Date de facture</span>
+                  </label>
+                </div>
+                <div class="col text-right">
+                  <span class="value">
+                    <%= facture.dateFacture.toLocaleDateString() %>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label>
+                    <span>Date d'échéance</span>
+                  </label>
+                </div>
+                <div class="col text-right">
+                  <span class="value">
+                    <%= facture.dateEcheanceFacture.toLocaleDateString() %>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label>
+                    <span>Numéro client</span>
+                  </label>
+                </div>
+                <div class="col text-right">
+                  <span class="value"><%= facture.numFacture %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-break page-break-visited">
+        <br />
+        <br />
+      </div>
+
+      <div
+        class=" notes base-text"
+        style="display: block; width: 100%; word-wrap: break-word;"
+      >
+        <%= facture.notesFacture %>
+      </div>
+
+      <div class="page-break page-break-visited">
+        <br />
+        <br />
+      </div>
+
+      <div class="invoice-table">
+        <table class="table" id="invoice-lines-table">
+          <thead>
+            <tr>
+              <!-- {/*
+                  <td class="table-text td-product-img"></td>
+                  */} {/*
+                  <td class="header-text td-product-number">
+                    <i>Produit</i>
+                  </td>
+                  */} -->
+              <th
+                class="header-text td-description table-text"
+                style="padding-left: 0;"
+              >
+                <i>Description</i>
+              </th>
+              <th class="td-quantity header-text table-number">
+                <i>Quantité</i>
+              </th>
+              <th class="td-unit header-text table-text">
+                <i>Unité</i>
+              </th>
+              <th class="td-price header-text table-number">
+                <i>Prix</i>
+              </th>
+              <th class="td-line-discount header-text table-number">
+                <i>Réduction(%)</i>
+              </th>
+              <th class="td-vat header-text table-number must-show">
+                <i>TVA(%)</i>
+              </th>
+              <th class="td-line-total header-text table-number">
+                <i>Montant(HT)</i>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="invoice-lines">
+            <% if (facture.lignesFacture.length > 0){%> <%
+            facture.lignesFacture.forEach((ligneFacture)=>{%>
+            <tr class="invoice-table__line base-text text-right">
+              <!-- {/*
+                        <td></td>
+                        */} {/*
+                        <td>{ligneFacture.produit}</td>
+                        */} -->
+              <td
+                class="header-text td-description table-text"
+                style=" padding-left:0;"
+              >
+                <%= ligneFacture.produit %>
+                <div class="invoice-table__description">
+                  <%= ligneFacture.description %>
+                </div>
+              </td>
+              <td class="td-quantity header-text table-number">
+                <%= ligneFacture.quantite %>
+              </td>
+              <td class="td-unit header-text table-text">
+                <%= ligneFacture.unite %>
+              </td>
+              <td class="td-price header-text table-number">
+                <%= ligneFacture.prix %>
+              </td>
+              <td class="td-line-discount header-text table-number">
+                <%= ligneFacture.reduction %>
+              </td>
+              <td class="td-vat header-text table-number must-show">
+                <%= ligneFacture.tva %>
+              </td>
+              <td class="td-line-total header-text table-number">
+                <%= (ligneFacture.quantite * ligneFacture.prix * (100 -
+                ligneFacture.reduction)) / 100 %>
+              </td>
+            </tr>
+            <%});%> <%}%>
+            <tr class="page-break page-break-visited"></tr>
+            <!-- {/*
+                 yes there should be 2 when using page-break in tr 
+                */} -->
+            <tr class="page-break page-break-visited"></tr>
+
+            <tr class="page-break page-break-visited"></tr>
+            <!--{/*
+                 yes there should be 2 when using page-break in tr 
+                */}-->
+            <tr class="page-break page-break-visited"></tr>
+          </tbody>
+        </table>
+        <div>
+          <hr
+            style="
+                display: block;
+                height: 1px;
+                border: 0;
+                border-top: 1px solid #ccc;
+                margin: 1em 0;
+                padding: 0;"
+          />
+        </div>
+        <div class="page-break page-break-visited">
+          <br />
+          <br />
+        </div>
+        <!-- {/* code total facture */} -->
+        <div class="row">
+          <div class="col"></div>
+          <div class="col">
+            <div class="row">
+              <div class="col">Sous-total HT</div>
+              <div class="col text-right">
+                <%=
+                facture.lignesFacture.map(ligneFacture=>((ligneFacture.quantite*ligneFacture.prix)*((100-ligneFacture.reduction)/100))).reduce(function(a,
+                b){return a+b;})%>
+              </div>
+            </div>
+            <% if (facture.lignesFacture.length > 0 ){ %>
+            <%facture.lignesFacture.forEach(ligneFacture=>{ %> <%
+            if(ligneFacture.tva){ %>
+            <div class="row">
+              <div class="col">
+                TVA <%= ligneFacture.tva %> % de <%= ligneFacture.quantite *
+                ligneFacture.prix * (1 - ligneFacture.reduction / 100) %>
+              </div>
+              <div class="col">
+                <div class="float-right">
+                  <%= (ligneFacture.quantite * ligneFacture.prix * (100 -
+                  ligneFacture.reduction) * ligneFacture.tva) / 10000 %>
+                </div>
+              </div>
+            </div>
+            <% } %> <% }); %> <% } %>
+
+            <div class="row">
+              <div class="col">
+                <h4>Montant Total EUR</h4>
+              </div>
+              <div class="col">
+                <div class="float-right">
+                  <%= facture.lignesFacture .map( ligneFacture =>
+                  (ligneFacture.quantite * ligneFacture.prix * ((100 -
+                  ligneFacture.reduction) * ligneFacture.tva + 100 * (100 -
+                  ligneFacture.reduction))) / 10000 ) .reduce(function(a, b) {
+                  return a + b; }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- {/* fin code total facture */} -->
+      </div>
+      <div className="page-break page-break-visited">
+        <br />
+      </div>
+      <div
+        class=" conditions base-text"
+        style="display:block; width: 100%; word-wrap: break-word;"
+      >
+        <%= facture.conditionFacture %>
+      </div>
+      <!-- {/*
+      <div>
+        <br />
+        <hr
+          style="
+              display: block;
+              height: 1px;
+              border: 0;
+              border-top: 1px solid #ccc;
+              margin: 1em 0;
+              padding: 0;
+            "
+        />
+      </div>
+      */} -->
+      <footer>
+        <div class="footer">
+          <span class="footer-item">
+            DUBINFO
+          </span>
+          <span class="footer-item">
+            Avenue de l'optimisme 91 B014
+          </span>
+          <span class="footer-item nowrap">
+            E-mail :
+            <span>wemeyijackson@yahoo.fr</span>
+          </span>
+          <span class="nowrap footer-item">
+            Téléphone :
+            <span>+33488024498</span>
+          </span>
+          <span class="nowrap footer-item">
+            Site Internet :
+            <span>www.site.com</span>
+          </span>
+          <span class="nowrap footer-item">
+            n° SIREN / SIRET :
+            <span>siren/siret</span>
+          </span>
+          <span class="nowrap footer-item">
+            N° TVA:
+            <span>8899877766767676</span>
+          </span>
+          <span class="nowrap footer-item">
+            Banque :
+            <span>BNP PARRIS BAS FORTISZ</span>
+          </span>
+          <span class="nowrap footer-item">
+            Code banque:
+            <span>CODEBANQUE</span>
+          </span>
+          <span class="nowrap footer-item">
+            N° du compte:
+            <span>34567890654</span>
+          </span>
+          <span class="nowrap footer-item">
+            Titulaire du compte :
+            <span>Kamni tcheudjeu nestor</span>
+          </span>
+          <span class="nowrap footer-item">
+            BIC :
+            <span>FRGETY</span>
+          </span>
+          <span class="nowrap footer-item">
+            IBAN :
+            <span>BE344567676778877889</span>
+          </span>
+        </div>
+      </footer>
+    </div>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

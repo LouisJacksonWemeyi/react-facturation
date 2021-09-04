@@ -1,0 +1,1503 @@
+<iframe
+  style="display: block; overflow: hidden; width: 100%; height: 3413px;"
+  frameborder="0"
+  scrolling="no"
+  height="0"
+  data-src="https://app.debitoor.com/printify.html#/draftInvoice/5e67c57e987b190020f1a80d?type=draftInvoice"
+>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          font-size: 12px;
+          font-family: Verdana;
+          -webkit-text-size-adjust: 100%;
+          -ms-text-size-adjust: none;
+        }
+
+        .page-left,
+        .page-right {
+          min-width: 55px;
+        }
+
+        .page-break {
+          clear: both;
+        }
+
+        .page-left,
+        .page-right {
+          min-width: 55px;
+        }
+
+        /* page-preview class disabled for PDF */
+
+        .page-preview .preview-content {
+          margin: auto;
+        }
+
+        .page-preview .page-frame {
+          border: 1px solid #dadee3;
+          margin-left: -1px;
+          margin-top: -1px;
+          background-color: white;
+        }
+        .page-fold {
+          position: absolute;
+          width: 15px;
+          height: 1px;
+          background-color: #999;
+        }
+
+        .page-fold-top {
+          top: 35%;
+        }
+
+        .page-fold-bottom {
+          bottom: 28%;
+        }
+
+        .footer {
+          border-top: 1px solid #eaeaea;
+          margin: 25px 0 20px 0;
+          text-align: center;
+          padding: 20px 0;
+          font-size: 10px;
+          color: #424242;
+          position: relative;
+        }
+
+        .footer:after {
+          content: '';
+          position: absolute;
+          right: -1px;
+          top: -1px;
+          height: 2px;
+          width: 75px;
+        }
+
+        .footer-item {
+          line-height: 14px;
+          padding-left: 5px;
+          padding-right: 5px;
+          max-width: 100%;
+        }
+
+        .footer span {
+          display: inline-block;
+        }
+
+        .header {
+          padding-top: 54px;
+        }
+
+        .nowrap {
+          white-space: nowrap;
+        }
+
+        .logo h2 {
+          margin: 0;
+          float: right;
+          font-size: 19px;
+          font-weight: bold;
+        }
+
+        .address {
+          width: 50%;
+          float: left;
+        }
+
+        .address-content {
+          margin: 109px 10px 10px 22px;
+        }
+
+        .address .basic-address {
+          color: #999;
+          font-size: 9px;
+          line-height: 14px;
+          padding-bottom: 5px;
+          min-height: 18px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        #cust-name {
+          font-weight: bold;
+        }
+
+        #cust-address {
+          white-space: pre-wrap;
+        }
+
+        .basic-address #company-address {
+          white-space: nowrap;
+        }
+
+        .logo {
+          width: 50%;
+          float: left;
+        }
+
+        .logo img {
+          max-width: 100%;
+          max-height: 150px;
+          float: right;
+        }
+
+        .info {
+          width: 100%;
+          float: left;
+          position: relative;
+          margin-bottom: 40px;
+        }
+
+        .notes,
+        .invoice-info-wrapper {
+          float: left;
+          width: 50%;
+        }
+
+        .notes {
+          min-height: 10px;
+        }
+
+        #additional-notes,
+        #notes-text {
+          line-height: 16px;
+          margin-left: 10px;
+        }
+
+        .additional-notes-text,
+        #notes-text {
+          white-space: pre-wrap;
+        }
+
+        #additional-notes {
+          margin-top: 20px;
+        }
+
+        .page-break.page-actual-break + #additional-notes {
+          margin-top: 0 !important;
+        }
+
+        #notes-text {
+          position: absolute;
+          bottom: 0;
+          max-width: 48%;
+          overflow: hidden;
+          max-height: 128px;
+        }
+
+        .invoice-line-name,
+        .invoice-line-description,
+        .notes,
+        #additional-notes,
+        .footer-item {
+          word-wrap: break-word;
+          overflow: hidden;
+        }
+
+        .invoice-info h3 {
+          margin: 0 0 6px;
+          padding: 10px;
+          font-size: 12px;
+          font-weight: 600;
+          border-bottom: 1px solid #eaeaea;
+        }
+
+        .invoice-info .line {
+          padding: 6px 10px;
+        }
+
+        .line-bold {
+          font-weight: 600;
+          font-size: 12px;
+        }
+
+        .invoice-info span.value {
+          float: right;
+        }
+
+        .invoice-info div.amount {
+          font-weight: bold;
+          background-color: #eaeaea;
+        }
+
+        .invoice-lines-table-wrapper {
+          width: 100%;
+        }
+
+        table {
+          transform: translate(0);
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        td {
+          vertical-align: top;
+        }
+
+        td.td-product-number,
+        td.td-quantity,
+        td.td-unit,
+        td.td-price,
+        td.td-line-discount,
+        td.td-line-total,
+        td.td-vat {
+          width: 10px; /* will auto adjust */
+        }
+
+        td.td-unit,
+        td.td-product-number {
+          white-space: nowrap;
+        }
+
+        td.td-product {
+          max-width: 10px; /* will auto adjust */
+        }
+
+        td.quantity,
+        #invoice-total .value {
+          text-align: right;
+          white-space: nowrap;
+        }
+
+        td.td-line-total,
+        td.td-price {
+          text-align: right;
+        }
+
+        #invoice-total .empty-line {
+          padding: 2px 10px;
+        }
+
+        #invoice-total .value,
+        td.td-line-total {
+          width: 1%;
+          min-width: 75px;
+          box-sizing: border-box;
+        }
+
+        .table-subtotal,
+        .table-head {
+          display: none;
+        }
+
+        .table-subtotal td {
+          text-align: right;
+        }
+
+        .table-subtotal .subtotal-amount {
+          margin: 0 5px 0 10px;
+        }
+
+        tr.show {
+          display: table-row !important;
+        }
+
+        .table-head {
+          background-color: #eaeaea;
+        }
+
+        .table-head td {
+          padding: 5px 10px;
+          white-space: nowrap;
+          border: 1px solid #eaeaea;
+        }
+
+        .table-line td {
+          padding: 5px 10px;
+          border: 1px solid #eaeaea;
+        }
+
+        .invoice-line-description {
+          margin-top: 5px;
+          white-space: pre-wrap;
+          color: #646473;
+          font-size: 11px;
+        }
+
+        .invoice-line-description:empty {
+          display: none;
+        }
+
+        .subtotal-space {
+          height: 35px;
+        }
+
+        .subtotal-abs-space {
+          height: 30px;
+        }
+
+        .subtotal-abs-gutter {
+          position: absolute;
+          right: 0;
+          margin: -17px 4px 0 0;
+        }
+
+        .clear {
+          clear: both;
+        }
+
+        #invoice-total {
+          margin-top: 20px;
+          padding-left: 30px;
+          width: 50%;
+          float: right;
+        }
+
+        #invoice-total.noTax {
+          margin-top: 40px;
+        }
+
+        .page-break.page-actual-break + #invoice-total {
+          margin-top: 0 !important;
+        }
+
+        #invoice-total td {
+          white-space: nowrap;
+          padding: 6px 10px;
+        }
+
+        #invoice-total .amount td {
+          padding: 7px 10px;
+          background-color: #eaeaea;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 18px;
+        }
+
+        .signature {
+          font-size: 16px;
+          padding-top: 40px;
+        }
+        .signature__label {
+          font-size: 12px;
+        }
+
+        .des2-header-fullsize {
+          position: absolute;
+          left: -55px;
+          right: -55px;
+          height: 276px;
+          top: 0;
+          overflow: hidden;
+        }
+
+        .print .des2-header-image__text {
+          display: none;
+        }
+
+        .des-customer-number {
+          display: none;
+        }
+
+        .td-product-number {
+          display: none;
+        }
+
+        .signature {
+          display: none;
+        }
+
+        .td-vat {
+          display: none;
+        }
+
+        .must-show {
+          display: table-cell !important;
+        }
+        .hidden {
+          display: none;
+        }
+
+        .table-line td.td-product-img {
+          width: 40px;
+          height: 32px;
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        .td-product-img img {
+          max-width: 40px;
+          max-height: 32px;
+        }
+        .address {
+          line-height: 1.5;
+        }
+
+        .address-content {
+          font-size: 12px;
+        }
+
+        .invoice-info div.amount,
+        .table-head,
+        #invoice-total .amount td {
+          background-color: #e0e0e0;
+        }
+        #invoice-total td {
+          border-color: #e0e0e0;
+        }
+        .page-canvas td {
+          border-color: #e0e0e0;
+        }
+        .page-canvas h3 {
+          border-color: #e0e0e0;
+        }
+        .footer {
+          border-top-color: #e0e0e0;
+        }
+
+        .table-head,
+        #invoice-total .amount,
+        .invoice-info .amount {
+          color: #000000;
+        }
+      </style>
+    </head>
+    <body class="page-preview print">
+      <div class="preview-content" style="width: 794px;">
+        <div
+          class="page-canvas"
+          style="width: 684px; position: absolute; margin-left: 55px; height: 3413px;"
+        >
+          <div
+            class="page-break page-break-first page-break-visited page-actual-break"
+            style="height: 55px;"
+          ></div>
+          <div class="address">
+            <div class="address-content">
+              <div class="basic-address">
+                <b id="company-name">Jackinformaticien</b>
+                <span id="company-address"
+                  >Rue capitaine joubert 40, Bte/07, 1040 Etterbeck</span
+                >
+              </div>
+              <div id="cust-name">Chanang Tondji Cabral</div>
+              <div id="cust-address">
+                Rue Gustave Defnet 17, boîte 03, 1060 Saint-Gilles
+              </div>
+              <div id="cust-ci-or-vat">
+                <div id="cust-ci">N° TVA UE BE 45678903445</div>
+              </div>
+            </div>
+          </div>
+          <div class="logo">
+            <img
+              class="header-standart__logo"
+              src="https://d3n0h4ojrl591n.cloudfront.net/agreements/4d06a686-dc5d-4045-9a8f-7008efd21af7/logos/16c96b5e-d0d2-43df-b0f5-8fad9489eb3e-firebaselogo.png"
+            />
+          </div>
+          <div class="page-break page-break-visited"></div>
+
+          <div class="info">
+            <div class="notes">
+              <div id="notes-text">
+                Débuter une activité indépendante ou une profession libérale
+                signifie se rendre en premier lieu dans un guichet d'entreprises
+                qui, pour un prix défiant toute concurrence, accomplira toutes
+                les formalités en votre nom. Quel soulagement, cela commence
+                bien.
+              </div>
+            </div>
+            <div class="invoice-info-wrapper">
+              <div class="invoice-info">
+                <h3>Facture proforma</h3>
+                <div class="line">
+                  <label><span>Date de facture</span></label>
+                  <span class="value">10.03.2020</span>
+                </div>
+                <div class="line line-bold">
+                  <label><span>Date d'échéance</span></label>
+                  <span class="value">24.03.2020</span>
+                </div>
+                <div class="line des-customer-number">
+                  <label><span>Numéro de client</span></label>
+                  <span class="value">1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-break page-break-visited"></div>
+
+          <div class="invoice-lines-table-wrapper">
+            <table id="invoice-lines-table">
+              <tbody id="invoice-lines">
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">0,00</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head show">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">25.850,65</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">25.850,65</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">51.701,30</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">51.701,30</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">77.551,95</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">77.551,95</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">103.402,60</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">103.402,60</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal show">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">129.253,25</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="page-break page-break-visited page-actual-break"
+                  style="height: 191px;"
+                ></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr
+                  class="page-break page-break-visited page-actual-break"
+                  style="height: 54px;"
+                ></tr>
+                <tr class="table-subtotal show">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">129.253,25</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head show">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">155.103,90</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">155.103,90</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">180.954,55</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">180.954,55</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">206.805,20</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">206.805,20</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">232.655,85</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">232.655,85</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">258.506,50</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">258.506,50</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">284.357,15</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré de la page précédente) :</i>
+                      <b class="subtotal-amount">284.357,15</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-head">
+                  <td class="header-text td-product-number">N°</td>
+                  <td class="invoice-line-text">Description</td>
+                  <td class="td-quantity">Quantité</td>
+                  <td class="td-unit">Unité</td>
+                  <td class="td-price">Prix</td>
+                  <td class="td-line-discount hidden">Réduc.</td>
+                  <td class="td-vat ">TVA</td>
+                  <td class="td-line-total">Montant</td>
+                </tr>
+                <tr class="table-line">
+                  <td class="table-text td-product-number">1</td>
+                  <td class="td-product product">
+                    <div class="invoice-line-name">
+                      Nissan Primera année 2019
+                    </div>
+                    <div class="invoice-line-description">
+                      Toyota C-HR est un SUV urbain qui part la conquête de la
+                      route, et il le fait avec classe. Avec son profil anguleux
+                      sculpté, le Toyota C-HR présente une silhouette unique.
+                      Disponible En Hybride. 5 Ans de Garantie. SUV Sans
+                      Compromis. Expertise Hybride. Profil Anguleux.
+                    </div>
+                  </td>
+                  <td class="td-quantity quantity">1</td>
+                  <td class="td-unit">pièce</td>
+                  <td class="quantity td-price">25.850,65</td>
+                  <td class="quantity td-line-discount hidden"></td>
+                  <td class="quantity td-vat ">21%</td>
+                  <td class="quantity td-line-total">25.850,65</td>
+                </tr>
+                <tr class="table-subtotal">
+                  <td>
+                    <div class="subtotal-abs-space"></div>
+                    <div class="subtotal-abs-gutter">
+                      <b>Sous-total EUR</b>
+                      <i>(transféré à la page suivante) :</i>
+                      <b class="subtotal-amount">310.207,80</b>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="page-break page-break-visited"></tr>
+                <!-- yes there should be 2 when using page-break in tr -->
+                <tr class="page-break page-break-visited"></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="page-break page-break-visited"></div>
+          <table id="invoice-total" class="noTax">
+            <tbody>
+              <tr>
+                <td>Sous-total HT</td>
+                <td class="value">310.207,80</td>
+              </tr>
+              <tr>
+                <td>
+                  TVA
+                  <span>21</span><span> %</span> <i>de</i>
+                  <span>310.207,80</span>
+                </td>
+                <td class="value">65.143,64</td>
+              </tr>
+              <tr>
+                <td class="empty-line" colspan="2"></td>
+              </tr>
+              <tr class="amount">
+                <td>
+                  <b><span>Montant Total</span> <span>EUR</span></b>
+                </td>
+                <td class="value">375.351,44</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="page-break page-break-visited page-actual-break"
+            style="height: 274px;"
+          ></div>
+          <div class="signature">
+            <div>_____________________</div>
+            <span class="signature__label">Signature </span>
+          </div>
+          <div id="additional-notes">
+            <div class="additional-notes-text">
+              Créée le 1er juillet 2003 pour réduire les charges administratives
+              des indépendants, la Banque-Carrefour des Entreprises est un
+              registre tenu à jour par le Service Public Fédéral Economie, PME,
+              Classes moyennes et Energie. Ce répertoire contient toutes les
+              données de base connues des entrepreneurs, indépendants et
+              professions libérales ainsi que leur numéro d'entreprise.
+            </div>
+            <div class="page-break page-break-visited"></div>
+            <div class="additional-notes-text">
+              Toute personne physique ou morale désirant exercer (à titre
+              principal ou complémentaire) une activité professionnelle
+              commerciale ou artisanale doit introduire une demande
+              d'inscription à la Banque-Carrefour des Entreprises. Vous ferez
+              cette inscription auprès d'un guichet d'entreprises qui accomplira
+              pour vous toutes les formalités nécessaires auprès des instances
+              officielles. Les titulaires d'une profession libérale ou les
+              sociétés de professions libérales doivent également s'enregistrer
+              à la BCE afin de recevoir un numéro d'entreprise.
+            </div>
+            <div class="page-break page-break-visited"></div>
+          </div>
+          <div class="page-break page-break-visited"></div>
+
+          <div class="page-break page-break-last page-break-visited"></div>
+          <div
+            class="page-top"
+            style="position: absolute; width: 684px; top: 1px;"
+          >
+            <div class="header"></div>
+          </div>
+          <div
+            class="page-bottom"
+            style="position: absolute; width: 684px; top: 949px;"
+          >
+            <div class="subtotal-space"></div>
+            <div class="footer">
+              <span class="footer-item"
+                ><b>
+                  Jackinformaticien
+                </b></span
+              >
+              <span class="footer-item">
+                Rue capitaine joubert 40, Bte/07, 1040 Etterbeck
+              </span>
+              <span class="nowrap footer-item">
+                <b>E-mail :</b>
+                <span>
+                  wemeyijackson@yahoo.fr
+                </span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Téléphone :</b>
+                <span>0466060035</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Site Internet :</b>
+                <span>www.site.com</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>n° SIREN / SIRET :</b>
+                <span>1986</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>N° TVA:</b>
+                <span>345234567I89</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Banque :</b>
+                <span>BNP</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Code banque:</b>
+                <span>FEDREE</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>N° du compte:</b>
+                <span>5678904356</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Titulaire du compte :</b>
+                <span>louis jackson wemeyi tcheudjeu</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>BIC :</b>
+                <span>GEBABBB</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>IBAN :</b>
+                <span>BE45678907654</span>
+              </span>
+            </div>
+          </div>
+          <div
+            class="page-left"
+            style="position: absolute; left: -55px; top: 1px; height: 1133px;"
+          >
+            <div class="page-fold page-fold-top"></div>
+            <div class="page-fold page-fold-bottom"></div>
+          </div>
+          <div
+            class="page-right"
+            style="position: absolute; right: -55px; top: 1px; height: 1133px;"
+          ></div>
+          <div
+            class="page-frame"
+            style="position: absolute; z-index: -1; top: 1px; left: -55px; width: 794px; height: 1123px;"
+          ></div>
+          <div
+            class="page-top"
+            style="position: absolute; width: 684px; top: 1145px;"
+          >
+            <div class="header"></div>
+          </div>
+          <div
+            class="page-bottom"
+            style="position: absolute; width: 684px; top: 2083px;"
+          >
+            <div class="subtotal-space"></div>
+            <div class="footer">
+              <span class="footer-item"
+                ><b>
+                  Jackinformaticien
+                </b></span
+              >
+              <span class="footer-item">
+                Rue capitaine joubert 40, Bte/07, 1040 Etterbeck
+              </span>
+              <span class="nowrap footer-item">
+                <b>E-mail :</b>
+                <span>
+                  wemeyijackson@yahoo.fr
+                </span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Téléphone :</b>
+                <span>0466060035</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Site Internet :</b>
+                <span>www.site.com</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>n° SIREN / SIRET :</b>
+                <span>1986</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>N° TVA:</b>
+                <span>345234567I89</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Banque :</b>
+                <span>BNP</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Code banque:</b>
+                <span>FEDREE</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>N° du compte:</b>
+                <span>5678904356</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Titulaire du compte :</b>
+                <span>louis jackson wemeyi tcheudjeu</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>BIC :</b>
+                <span>GEBABBB</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>IBAN :</b>
+                <span>BE45678907654</span>
+              </span>
+            </div>
+          </div>
+          <div
+            class="page-left"
+            style="position: absolute; left: -55px; top: 1145px; height: 1123px;"
+          >
+            <div class="page-fold page-fold-top"></div>
+            <div class="page-fold page-fold-bottom"></div>
+          </div>
+          <div
+            class="page-right"
+            style="position: absolute; right: -55px; top: 1145px; height: 1123px;"
+          ></div>
+          <div
+            class="page-frame"
+            style="position: absolute; z-index: -1; top: 1145px; left: -55px; width: 794px; height: 1123px;"
+          ></div>
+          <div
+            class="page-top"
+            style="position: absolute; width: 684px; top: 2279px;"
+          >
+            <div class="header"></div>
+          </div>
+          <div
+            class="page-bottom"
+            style="position: absolute; width: 684px; top: 3217px;"
+          >
+            <div class="subtotal-space"></div>
+            <div class="footer">
+              <span class="footer-item"
+                ><b>
+                  Jackinformaticien
+                </b></span
+              >
+              <span class="footer-item">
+                Rue capitaine joubert 40, Bte/07, 1040 Etterbeck
+              </span>
+              <span class="nowrap footer-item">
+                <b>E-mail :</b>
+                <span>
+                  wemeyijackson@yahoo.fr
+                </span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Téléphone :</b>
+                <span>0466060035</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Site Internet :</b>
+                <span>www.site.com</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>n° SIREN / SIRET :</b>
+                <span>1986</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>N° TVA:</b>
+                <span>345234567I89</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Banque :</b>
+                <span>BNP</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Code banque:</b>
+                <span>FEDREE</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>N° du compte:</b>
+                <span>5678904356</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>Titulaire du compte :</b>
+                <span>louis jackson wemeyi tcheudjeu</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>BIC :</b>
+                <span>GEBABBB</span>
+              </span>
+              <span class="nowrap footer-item">
+                <b>IBAN :</b>
+                <span>BE45678907654</span>
+              </span>
+            </div>
+          </div>
+          <div
+            class="page-left"
+            style="position: absolute; left: -55px; top: 2279px; height: 1123px;"
+          >
+            <div class="page-fold page-fold-top"></div>
+            <div class="page-fold page-fold-bottom"></div>
+          </div>
+          <div
+            class="page-right"
+            style="position: absolute; right: -55px; top: 2279px; height: 1123px;"
+          ></div>
+          <div
+            class="page-frame"
+            style="position: absolute; z-index: -1; top: 2279px; left: -55px; width: 794px; height: 1123px;"
+          ></div>
+        </div>
+      </div>
+    </body>
+  </html>
+</iframe>
